@@ -1,49 +1,64 @@
 # repmusic — Brand & Design Hub
 
-Complete brand and design reference for **Robin Phillips & repmusic**. One-stop resource for creating social media assets, graphics, and copy in Claude Design.
+This repo does two things:
+
+1. **It's the repmusic brand asset store** — logos, photography, social graphics, press/EPK files, and the album artwork for Robin Phillips & repmusic are all hosted here and served via GitHub Pages.
+
+2. **It works with Claude Design** — the `templates/` and `copy/` folders contain ready-to-paste Claude Design prompts, caption banks, hashtag sets, and brand guidelines so you can spin up new social media graphics, posters, and assets in seconds without rebuilding context each time.
 
 ---
 
-## Quick Links
+## Live Site
 
-| Resource | File |
+**https://s7612f.github.io/robin-phillips-repmusic/**
+
+The site auto-reads the repo via the GitHub API — drop a file into any `assets/` subfolder, push it, and it appears on the download page immediately. No code changes needed.
+
+---
+
+## How to Add Assets
+
+Just drag files into the right folder and push:
+
+```
+assets/
+  logos/                  ← repmusic & Robin Phillips logo files (SVG, PNG, variants)
+  photos/                 ← performance & branding photography
+  album/                  ← Return From The Source artwork & promo images
+  social/
+    instagram/            ← ready-to-post Instagram graphics
+    facebook/             ← Facebook graphics & event covers
+    tiktok/               ← TikTok assets
+    youtube-thumbnails/   ← YouTube thumbnail graphics
+  press/                  ← EPKs, press bios, press photos
+```
+
+---
+
+## Working with Claude Design
+
+| File | Purpose |
 |---|---|
-| Master brand reference | [BRAND.md](BRAND.md) |
-| Claude Design prompt templates | [templates/claude-design-prompts.md](templates/claude-design-prompts.md) |
-| Caption & copy bank | [copy/caption-bank.md](copy/caption-bank.md) |
+| [BRAND.md](BRAND.md) | Master identity: colours, fonts, voice, bios, album info, all handles |
+| [templates/claude-design-prompts.md](templates/claude-design-prompts.md) | Copy-paste prompts for every asset type (Instagram, YouTube, Facebook, posters…) |
+| [copy/caption-bank.md](copy/caption-bank.md) | Ready-to-use captions, hashtag sets, seasonal copy |
+
+**Workflow:** open `BRAND.md` for context → grab a prompt from `templates/` → paste into Claude Design → export → drop into the right `assets/` folder → push → live on the site.
 
 ---
 
-## Folder Structure
+## Brand in 10 Seconds
 
-```
-/assets
-  /logo           ← logo files (svg, png, variants) — ADD HERE
-  /photos         ← performance & branding photography — ADD HERE
-  /album          ← Return From The Source artwork — ADD HERE
-  /social         ← ready-to-post graphics by platform
-    /instagram
-    /facebook
-    /tiktok
-    /youtube-thumbnails
-  /press          ← EPKs, press photos, bios
-
-/templates        ← Claude Design prompt templates (ready to paste)
-/copy             ← Caption banks, bio variants, hashtag sets
-```
-
----
-
-## The Brand in 10 Seconds
-
-- **Name:** repmusic (always lowercase)
-- **Who:** Robin Phillips — singer, pianist, bandleader, producer
-- **What:** Jazz, swing & pop. Live performances, recording studio, teaching
-- **Where:** London & Cambridge, UK
-- **Palette:** Navy · Gold · Cream · Charcoal
-- **Feel:** Cinematic, sophisticated, warm. Supper-club not stock photo.
-- **Handles:** @planetrepmusic everywhere
-- **Website:** repmusic.co.uk | robinphillips.co.uk
+| | |
+|---|---|
+| Name | **repmusic** (always lowercase) |
+| People | Robin Phillips — singer, pianist, bandleader, producer |
+| Genre | Jazz · Swing · Pop |
+| Based | London & Cambridge, UK |
+| Palette | Navy `#1a2744` · Gold `#c9a84c` · Cream `#f5f0e8` · Charcoal `#1c1c1c` |
+| Feel | Cinematic, sophisticated, warm — supper-club not stock photo |
+| Handles | **@planetrepmusic** everywhere |
+| Websites | [repmusic.co.uk](https://www.repmusic.co.uk) · [robinphillips.co.uk](https://robinphillips.co.uk) |
 
 ---
 

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>repmusic — Brand Asset Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:   #1a2744;
+      --gold:   #c9a84c;
+      --cream:  #f5f0e8;
+      --charcoal: #1c1c1c;
+      --muted:  #8a8070;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--charcoal);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+    }
+
+    header .wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+    }
+
+    header .wordmark span { color: var(--gold); }
+
+    header .sub {
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    header .tagline {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: rgba(245,240,232,0.6);
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* ── Rule ── */
+    .rule {
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 1.5rem auto;
+    }
+
+    /* ── Nav pills ── */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1.2rem 2rem;
+      background: rgba(26,39,68,0.5);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+
+    nav a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    nav a:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* ── Section ── */
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(201,168,76,0.25);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.2rem;
+    }
+
+    section .section-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    /* ── Asset grid ── */
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .asset-card {
+      background: rgba(26,39,68,0.4);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 3px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      transition: border-color 0.2s;
+    }
+
+    .asset-card:hover { border-color: rgba(201,168,76,0.5); }
+
+    .asset-card .icon {
+      font-size: 2rem;
+      opacity: 0.7;
+    }
+
+    .asset-card .name {
+      font-size: 0.8rem;
+      text-align: center;
+      color: var(--cream);
+      word-break: break-all;
+    }
+
+    .asset-card .meta {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .asset-card a.dl-btn {
+      display: inline-block;
+      margin-top: auto;
+      padding: 0.4rem 1rem;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .asset-card a.dl-btn:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    /* ── Empty state ── */
+    .empty {
+      padding: 1.5rem;
+      border: 1px dashed rgba(201,168,76,0.2);
+      border-radius: 3px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* ── Loading spinner ── */
+    .loading {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-style: italic;
+      padding: 1rem 0;
+    }
+
+    /* ── Quick-reference panel ── */
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .ref-card {
+      background: rgba(26,39,68,0.4);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 3px;
+      padding: 1.2rem 1.4rem;
+    }
+
+    .ref-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .ref-card p, .ref-card li {
+      font-size: 0.8rem;
+      color: rgba(245,240,232,0.75);
+      line-height: 1.6;
+    }
+
+    .ref-card ul { list-style: none; }
+    .ref-card ul li::before { content: "— "; color: var(--gold); }
+
+    .swatch-row { display: flex; gap: 0.5rem; margin-top: 0.6rem; }
+    .swatch {
+      width: 32px; height: 32px; border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.5rem; color: rgba(255,255,255,0.6); font-weight: 500;
+    }
+
+    /* ── Handles ── */
+    .handles { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .handle-tag {
+      padding: 0.25rem 0.7rem;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 2px;
+      font-size: 0.72rem;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .handle-tag:hover { background: rgba(201,168,76,0.2); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wordmark">rep<span>music</span></div>
+  <div class="sub">Brand Asset Hub · Robin Phillips</div>
+  <span class="rule"></span>
+  <div class="tagline">"The highest quality live music performances, specialising in jazz, swing and pop"</div>
+</header>
+
+<nav>
+  <a href="#logos">Logos</a>
+  <a href="#photos">Photography</a>
+  <a href="#album">Album</a>
+  <a href="#social">Social Assets</a>
+  <a href="#press">Press / EPK</a>
+  <a href="#brand">Brand Reference</a>
+</nav>
+
+<main>
+
+  <!-- ── Logos ── -->
+  <section id="logos">
+    <h2>Logos</h2>
+    <p class="section-desc">SVG, PNG, and variant files for repmusic and Robin Phillips.</p>
+    <div class="asset-grid" id="grid-logos">
+      <div class="loading">Loading…</div>
+    </div>
+  </section>
+
+  <!-- ── Photos ── -->
+  <section id="photos">
+    <h2>Photography</h2>
+    <p class="section-desc">Performance, promotional, and branding photography.</p>
+    <div class="asset-grid" id="grid-photos">
+      <div class="loading">Loading…</div>
+    </div>
+  </section>
+
+  <!-- ── Album ── -->
+  <section id="album">
+    <h2>Album — <em>Return From The Source</em></h2>
+    <p class="section-desc">Artwork, promo images, and press materials for the album.</p>
+    <div class="asset-grid" id="grid-album">
+      <div class="loading">Loading…</div>
+    </div>
+  </section>
+
+  <!-- ── Social ── -->
+  <section id="social">
+    <h2>Social Media Assets</h2>
+    <p class="section-desc">Ready-to-post graphics by platform.</p>
+
+    <h3 style="color:var(--cream);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.8rem;">Instagram</h3>
+    <div class="asset-grid" id="grid-instagram" style="margin-bottom:1.5rem;"><div class="loading">Loading…</div></div>
+
+    <h3 style="color:var(--cream);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.8rem;">Facebook</h3>
+    <div class="asset-grid" id="grid-facebook" style="margin-bottom:1.5rem;"><div class="loading">Loading…</div></div>
+
+    <h3 style="color:var(--cream);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.8rem;">TikTok</h3>
+    <div class="asset-grid" id="grid-tiktok" style="margin-bottom:1.5rem;"><div class="loading">Loading…</div></div>
+
+    <h3 style="color:var(--cream);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.8rem;">YouTube Thumbnails</h3>
+    <div class="asset-grid" id="grid-youtube"><div class="loading">Loading…</div></div>
+  </section>
+
+  <!-- ── Press ── -->
+  <section id="press">
+    <h2>Press / EPK</h2>
+    <p class="section-desc">Electronic press kit files, bios, and press photos for venues and agents.</p>
+    <div class="asset-grid" id="grid-press">
+      <div class="loading">Loading…</div>
+    </div>
+  </section>
+
+  <!-- ── Brand Reference ── -->
+  <section id="brand">
+    <h2>Brand Reference</h2>
+    <p class="section-desc">Quick-access identity guide for designing repmusic assets.</p>
+
+    <div class="ref-grid">
+
+      <div class="ref-card">
+        <h3>Colour Palette</h3>
+        <div class="swatch-row">
+          <div class="swatch" style="background:#1a2744;" title="#1a2744">Navy</div>
+          <div class="swatch" style="background:#c9a84c;" title="#c9a84c">Gold</div>
+          <div class="swatch" style="background:#f5f0e8;color:#333;" title="#f5f0e8">Cream</div>
+          <div class="swatch" style="background:#1c1c1c;border:1px solid #333;" title="#1c1c1c">Char</div>
+        </div>
+        <p style="margin-top:0.6rem;font-size:0.7rem;color:var(--muted);">
+          #1a2744 · #c9a84c · #f5f0e8 · #1c1c1c
+        </p>
+      </div>
+
+      <div class="ref-card">
+        <h3>Typography</h3>
+        <ul>
+          <li>Display: Cormorant Garamond (serif)</li>
+          <li>Body: Inter or Helvetica Neue</li>
+          <li>Tone: elegant, warm, never corporate</li>
+        </ul>
+      </div>
+
+      <div class="ref-card">
+        <h3>Social Handles</h3>
+        <div class="handles" style="margin-top:0.4rem;">
+          <a class="handle-tag" href="https://instagram.com/planetrepmusic" target="_blank">@planetrepmusic</a>
+          <a class="handle-tag" href="https://facebook.com/PlanetRepmusic" target="_blank">Facebook</a>
+          <a class="handle-tag" href="https://youtube.com/channel/UC5AyZ643h13bw3tAx5vQOxg" target="_blank">YouTube</a>
+          <a class="handle-tag" href="https://soundcloud.com/repmusicltd" target="_blank">SoundCloud</a>
+          <a class="handle-tag" href="https://linkedin.com/in/robinphillipsjazz/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="ref-card">
+        <h3>Key Links</h3>
+        <ul>
+          <li><a href="https://www.repmusic.co.uk" style="color:var(--gold);">repmusic.co.uk</a></li>
+          <li><a href="https://robinphillips.co.uk" style="color:var(--gold);">robinphillips.co.uk</a></li>
+          <li><a href="BRAND.md" style="color:var(--gold);">Full brand doc (BRAND.md)</a></li>
+          <li><a href="templates/claude-design-prompts.md" style="color:var(--gold);">Claude Design prompts</a></li>
+          <li><a href="copy/caption-bank.md" style="color:var(--gold);">Caption bank</a></li>
+        </ul>
+      </div>
+
+      <div class="ref-card">
+        <h3>Brand Voice</h3>
+        <ul>
+          <li>Sophisticated but warm</li>
+          <li>Witty, never pompous</li>
+          <li>Passionate about music</li>
+          <li>Cinematic, not corporate</li>
+          <li>Supper-club feel</li>
+        </ul>
+      </div>
+
+      <div class="ref-card">
+        <h3>Content Pillars</h3>
+        <ul>
+          <li>Performance shots & clips</li>
+          <li>Album: Return From The Source</li>
+          <li>Behind the scenes</li>
+          <li>Story & heritage</li>
+          <li>Bookings & offers</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>repmusic Ltd · London & Cambridge · <a href="https://www.repmusic.co.uk">repmusic.co.uk</a></p>
+  <p style="margin-top:0.5rem;">Asset hub hosted on GitHub · <a href="https://github.com/s7612f/robin-phillips-repmusic">View repo</a></p>
+</footer>
+
+<script>
+  const REPO = 's7612f/robin-phillips-repmusic';
+  const API  = 'https://api.github.com/repos/' + REPO + '/contents/';
+  const RAW  = 'https://raw.githubusercontent.com/' + REPO + '/main/';
+
+  const IMAGE_EXTS = ['png','jpg','jpeg','gif','webp','svg','avif'];
+  const DOC_EXTS   = ['pdf','doc','docx','txt','md'];
+
+  function ext(name) { return name.split('.').pop().toLowerCase(); }
+
+  function icon(name) {
+    const e = ext(name);
+    if (IMAGE_EXTS.includes(e)) return '🖼';
+    if (e === 'svg') return '✏️';
+    if (e === 'pdf') return '📄';
+    if (['zip','rar'].includes(e)) return '🗜';
+    return '📁';
+  }
+
+  async function loadFolder(path, gridId) {
+    const grid = document.getElementById(gridId);
+    try {
+      const res = await fetch(API + path);
+      const files = await res.json();
+      if (!Array.isArray(files) || files.length === 0) {
+        grid.innerHTML = '<div class="empty">No files uploaded yet — drop assets into <code>' + path + '</code> in the repo.</div>';
+        return;
+      }
+      const items = files.filter(f => f.type === 'file');
+      if (items.length === 0) {
+        grid.innerHTML = '<div class="empty">No files uploaded yet — drop assets into <code>' + path + '</code> in the repo.</div>';
+        return;
+      }
+      grid.innerHTML = items.map(f => {
+        const isImg = IMAGE_EXTS.includes(ext(f.name));
+        const thumb = isImg ? `<img src="${RAW + path + '/' + f.name}" alt="${f.name}" style="width:100%;height:120px;object-fit:cover;border-radius:2px;margin-bottom:0.5rem;" />` : `<div class="icon">${icon(f.name)}</div>`;
+        const size = f.size > 1024*1024 ? (f.size/1024/1024).toFixed(1)+' MB' : Math.round(f.size/1024)+' KB';
+        return `<div class="asset-card">
+          ${thumb}
+          <div class="name">${f.name}</div>
+          <div class="meta">${size}</div>
+          <a class="dl-btn" href="${f.download_url}" download="${f.name}">Download</a>
+        </div>`;
+      }).join('');
+    } catch(e) {
+      grid.innerHTML = '<div class="empty">Could not load files.</div>';
+    }
+  }
+
+  loadFolder('assets/logos',                'grid-logos');
+  loadFolder('assets/photos',               'grid-photos');
+  loadFolder('assets/album',                'grid-album');
+  loadFolder('assets/social/instagram',     'grid-instagram');
+  loadFolder('assets/social/facebook',      'grid-facebook');
+  loadFolder('assets/social/tiktok',        'grid-tiktok');
+  loadFolder('assets/social/youtube-thumbnails', 'grid-youtube');
+  loadFolder('assets/press',                'grid-press');
+</script>
+
+</body>
+</html>
