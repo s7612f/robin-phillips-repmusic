@@ -2,6 +2,8 @@
 
 > One-stop reference for Claude Design: social media assets, graphics, copy, and branding for Robin Phillips & repmusic.
 
+> **IMPORTANT FOR CLAUDE DESIGN:** The GitHub Pages site hosting this repo (`s7612f.github.io/robin-phillips-repmusic`) is an **internal asset tool only** — its layout and design are NOT part of the repmusic brand. Do not reference or replicate it. The actual repmusic brand and websites are at **repmusic.co.uk** and **robinphillips.co.uk** — use the content in `website-reference/` for accurate brand context.
+
 ---
 
 ## Identity
